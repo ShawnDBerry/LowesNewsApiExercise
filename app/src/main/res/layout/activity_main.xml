@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/searchImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_search"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextLayout"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:hint="@string/search"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        app:layout_constraintStart_toEndOf="@id/searchImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/topNewsButton">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/queryEditText"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/topNewsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/headlines"
+        android:background="#00FFFFFF"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/recyclerview_news_snippet"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#44FDECE2"
+        android:padding="@dimen/dimen_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

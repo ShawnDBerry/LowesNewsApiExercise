@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LowesNewsApiExercise</string>
+    <string name="search">search</string>
+    <string name="headlines">Headlines</string>
+    <string name="author_string">by %s</string>
+    <string name="show_me_more">Show me more!</string>
+    <string name="no_content_header">No Content</string>
+    <string name="no_content_content">We could not find what you were looking for. Please try again later</string>
+    <string name="cancel_alert">Cancel</string>
+    <string name="close_application">Close Application</string>
+    <string name="input_error">Please input something to search</string>
+</resources>
